@@ -1,0 +1,42 @@
+void setup() 
+  {
+    pinMode(8, OUTPUT);//LOLIN PIN 2
+    pinMode(11, OUTPUT);
+} 
+
+long durasiLed1 = 0;
+long jedaLed1 = 20000;
+int  statusLed1 = LOW;
+
+long durasiLed2 = 0;
+long jedaLed2 = 500;
+int  statusLed2 = LOW;
+
+void loop(){
+   if(millis()- durasiLed1 > jedaLed1){      
+      durasiLed1 = millis();      
+      if (statusLed1 == LOW)
+        {
+         statusLed1 = HIGH;
+        }
+      else
+        {
+          statusLed1 = LOW;
+        }
+      digitalWrite(8,statusLed1);      
+     }
+      
+
+    if (millis()- durasiLed2 > jedaLed2){      
+      durasiLed2 = millis();      
+      if (statusLed2 == LOW)
+        {
+         statusLed2 = HIGH;
+        }
+      else
+        {
+          statusLed2 = LOW;
+        }
+      digitalWrite(11,statusLed2);      
+     }
+  }
